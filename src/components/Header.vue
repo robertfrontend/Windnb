@@ -16,7 +16,6 @@
                                 <span class="input-group-text">
                                     <i class="material-icons text-danger">search</i>
                                 </span>
-
                             </div>
                         </div>
                     </div>
