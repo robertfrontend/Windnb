@@ -3,7 +3,7 @@
     <h2><b>Stays in Finland</b></h2>
     <b-row class="pt-4 pl-2">
 
-      <b-col md="4" sm="12" class="mb-4 tarjeta mt-2" 
+      <b-col lg="4" md="6" sm="12" class="mb-4 tarjeta mt-2" 
         v-for="dat in datos" :key="dat.photo">
         <div class="img_tarject">
             <b-img-lazy

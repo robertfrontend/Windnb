@@ -30,4 +30,14 @@ export default {
 body {
   font-family: sans-serif;
 }
+
+.boton_one{
+  background: #eb5757;
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 16px;
+}
 </style>
