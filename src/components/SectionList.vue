@@ -20,10 +20,14 @@
           </div>
           <div class="d-flex">
             <i class="fas fa-star text-danger mt-1 mr-1"></i>
-            <p class="">4.40</p>
+            <p class=""> {{ dat.rating }} </p>
           </div>
           <div class="col-12 pt-0 mt-n1">
-                <p class="m-0 ml-n2" style="font-weight:500;"> {{dat.title}} </p>
+                <p class="m-0 ml-n2" style="font-weight:500;"> 
+                  {{dat.title}} <br>
+                  Hotel name: <span class="text-primary">{{ dat.hotelName }}</span> <br>
+                  Country: <span class="text-success">{{ dat.country }}</span> 
+                </p>
           </div>
         </b-row>
       </b-col>
