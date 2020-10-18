@@ -106,5 +106,17 @@
     "type": "Entire apartment",
     "beds": 1,
     "photo": "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2255&q=80"
+  },
+  {
+    "city": "Medellin",
+    "country": "Colombia",
+    "hotelName": "ColmbiaBay",
+    "superHost": false,
+    "title": "Beautiful Colombia Love",
+    "rating": 5.49,
+    "maxGuests": 2,
+    "type": "Entire apartment",
+    "beds": 1,
+    "photo": "https://cdn.pixabay.com/photo/2017/07/18/19/39/lighthouse-2516803_960_720.jpg"
   }
 ]
