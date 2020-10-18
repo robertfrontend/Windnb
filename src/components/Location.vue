@@ -9,20 +9,20 @@
           placeholder="Hesinki, Finland"
           id="input"
           v-model="locationSearch"
-          @change="locationSearch"
         />
       </b-col>
       <b-col md="12" class="w-100">
-        <div
-          v-for="(tarea, index) in filtroTareas"
-          :key="index"
-          class="d-none pt-2 ml-3"
-          :class="openBusqueda"
-        >
-          {{ tarea.city | mayuscula }} - {{ tarea.hotelName }}
-        </div>
-        <template v-if="tarea === ''">
-            No hay datos
+        <template v-if="locationSearch">
+          <div
+            v-for="(tarea, index) in filtroTareas"
+            :key="index"
+            class="pt-2 ml-3"
+          >
+            <a href="#" class="text-dark">
+              <i class="fas fa-map-marker-alt mr-1 "></i
+              ><b>{{ tarea.city | mayuscula }} - {{ tarea.hotelName }}</b>
+            </a>
+          </div>
         </template>
       </b-col>
     </b-row>
@@ -32,16 +32,12 @@
 import datosJSON from "@/data/stays.json";
 
 export default {
-  name: "Locarion",
+  name: "Location",
   props: {},
-
   watch: {
     // abrir busqueda
-    locationSearch() {
-      this.openBusqueda = "d-block";
-    },
+    locationSearch() {},
   },
-
   data() {
     return {
       // v-model de la busqueda
@@ -49,7 +45,6 @@ export default {
       // datos del json
       datos: datosJSON,
     };
-
   },
   methods: {},
   computed: {

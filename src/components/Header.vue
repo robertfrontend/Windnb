@@ -32,18 +32,10 @@
               <b-container>
                 <b-row>
                   <b-col lg="4" class="text-left">
-                    <Location />
+                    <Location  />
                   </b-col>
                   <b-col lg="4" class="text-left">
-                    <label>GUESTS</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="Add guests"
-                      id="input"
-                      @click="inputGuest"
-                    />
-                    <Guest :openGuest="openGuest" />
+                    <Guest />
                   </b-col>
 
                   <b-col lg="4"  class="text-center mt-4 mb-4">
@@ -79,7 +71,6 @@ export default {
   },
   data() {
     return {
-      openGuest: "",
       openLocation: "",
       divOculto: "div_oculto",
     };
@@ -91,11 +82,6 @@ export default {
     },
     ocultar() {
       this.divOculto = "";
-      this.openGuest = "";
-    },
-
-    inputGuest() {
-      this.openGuest = "openGuest";
     },
   },
 };
