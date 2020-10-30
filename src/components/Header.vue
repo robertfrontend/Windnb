@@ -32,28 +32,10 @@
               <b-container>
                 <b-row>
                   <b-col lg="4" class="text-left">
-                    <label>Location</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="Hesinki, Finland"
-                      id="input"
-                      @click="inputLocation"
-                    />
-
-                    <Location  :openLocation="openLocation" />
-
+                    <Location  />
                   </b-col>
                   <b-col lg="4" class="text-left">
-                    <label>GUESTS</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="Add guests"
-                      id="input"
-                      @click="inputGuest"
-                    />
-                    <Guest :openGuest="openGuest" />
+                    <Guest />
                   </b-col>
 
                   <b-col lg="4"  class="text-center mt-4 mb-4">
@@ -89,7 +71,6 @@ export default {
   },
   data() {
     return {
-      openGuest: "",
       openLocation: "",
       divOculto: "div_oculto",
     };
@@ -101,16 +82,7 @@ export default {
     },
     ocultar() {
       this.divOculto = "";
-      this.openGuest = "";
     },
-
-    inputGuest() {
-      this.openGuest = "openGuest";
-    },
-
-    inputLocation() {
-      this.openLocation = "openLocation"
-    }
   },
 };
 </script>
@@ -211,6 +183,7 @@ export default {
   padding-top: 4em;
   width: 100%;
   height: 0vh;
+  padding-bottom: 10em;
 }
 
 @media (max-width: 768px) {
