@@ -6,7 +6,7 @@
         <input
           type="text"
           class="form-control"
-          placeholder="Hesinki, Finland"
+          placeholder="Punta Cana, Dominican Republic"
           id="input"
           v-model="locationSearch"
         />
@@ -19,7 +19,7 @@
             class="pt-2 ml-3"
           >
             <a href="#" class="text-dark">
-              <i class="fas fa-map-marker-alt mr-1 "></i
+              <i class="fas fa-map-marker-alt mr-1"></i
               ><b>{{ tarea.city | mayuscula }} - {{ tarea.hotelName }}</b>
             </a>
           </div>
@@ -29,28 +29,33 @@
   </div>
 </template>
 <script>
-import datosJSON from "@/data/stays.json";
+import Api from '@/Api.js'
+
 
 export default {
   name: "Location",
   props: {},
-  watch: {
-    // abrir busqueda
-    locationSearch() {},
+  created() {
+    // componente api
+    Api.traerDatos()
+      .then(ok => {
+        ok.data.map(res => {
+          this.datosApi.push(res)
+        })
+      })
   },
   data() {
     return {
       // v-model de la busqueda
       locationSearch: "",
-      // datos del json
-      datos: datosJSON,
+      datosApi: [],
     };
   },
   methods: {},
   computed: {
     // buscar las ciudades
     filtroTareas() {
-      return this.datos.filter((loca) => {
+      return this.datosApi.filter((loca) => {
         return loca.city.includes(this.locationSearch);
       });
     },

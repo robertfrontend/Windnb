@@ -1,21 +1,22 @@
 <template>
   <div class="guest ml-3">
     <b-row>
-      <b-col md="12" class="pb-4 pl-4">
+      <b-col md="12" class="pb-4 pl-4"  @click="mostrarGuest">
         <label>GUESTS</label>
         <input
           type="text"
           class="form-control"
           placeholder="Add guests"
           id="input"
-          @click="mostrarGuest"
+          disabled
+
         />
       </b-col>
       <b-col md="12" class="w-100" v-if="mostrar" >
         <b-row>
           <b-col cols="12" class="ml-3">
             <b>Adults</b>
-            <p>Ages 13 or above</p>
+            <p class="text-secondary">Ages 13 or above</p>
           </b-col>
           <b-col cols="12" class="ml-3">
             <div class="d-flex flex-row">
@@ -32,7 +33,7 @@
           </b-col>
           <b-col cols="12" class="ml-3 mt-4">
             <b>Children</b>
-            <p>Ages 2-12</p>
+            <p class="text-secondary">Ages 2-12</p>
           </b-col>
           <b-col cols="12" class="ml-3">
             <div class="d-flex flex-row">
