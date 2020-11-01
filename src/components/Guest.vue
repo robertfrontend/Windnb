@@ -1,7 +1,7 @@
 <template>
   <div class="guest ml-3">
     <b-row>
-      <b-col md="12" class="pb-4 pl-4"  @click="mostrarGuest">
+      <b-col @click="mostrarGuest">
         <label>GUESTS</label>
         <input
           type="text"

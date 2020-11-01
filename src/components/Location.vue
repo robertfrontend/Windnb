@@ -18,7 +18,8 @@
             :key="index"
             class="pt-2 ml-3"
           >
-            <a href="#" class="text-dark">
+            {{ tarea.id}}
+            <a :href="'#' + tarea.id" class="text-dark">
               <i class="fas fa-map-marker-alt mr-1"></i
               ><b>{{ tarea.city | mayuscula }} - {{ tarea.hotelName }}</b>
             </a>

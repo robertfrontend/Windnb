@@ -3,7 +3,6 @@
     <header class="pt-4">
       <b-container>
         <b-row class="pl-4 pr-4">
-
           <b-col>
             <img src="@/assets/logo.svg" alt="" />
           </b-col>
@@ -17,7 +16,6 @@
                 type="text"
                 class="form-control search"
                 placeholder="Add guests"
-
               />
               <div class="input-group-prepend final">
                 <span class="input-group-text">
@@ -28,30 +26,33 @@
           </b-col>
 
           <div class="div_oculto" :class="divOculto">
+
+            <div class="bg-light w-100 text-right pt-2 pr-2 pt-md-5 pr-md-5">
+              <i
+                class="fas fa-times text-danger"
+                style="font-size: 30px; cursor: pointer"
+                @click="ocultar"
+              ></i>
+            </div>
+
             <div class="hijo_oculto">
               <b-container>
                 <b-row>
-                  <b-col lg="4" class="text-left">
-                    <Location  />
+                  <b-col lg="4" class=" text-left">
+                    <Location />
                   </b-col>
                   <b-col lg="4" class="text-left">
                     <Guest />
                   </b-col>
 
-                  <b-col lg="4"  class="text-center mt-4 mb-4">
+                  <b-col lg="4" class="text-center mt-4 mb-4">
                     <button class="boton_one">
                       <i class="fas fa-search"></i>
                       Search
                     </button>
                   </b-col>
-
                 </b-row>
               </b-container>
-            </div>
-            <div class="text-center mt-2 pt-2">
-                <i class="fas fa-times mt-2 p-3 text-white" 
-                  style="font-size:30px; cursor:pointer;"
-                  @click="ocultar" ></i>
             </div>
           </div>
         </b-row>
@@ -87,7 +88,6 @@ export default {
 };
 </script>
 <style>
-
 #pad {
   width: 70%;
   float: right;
@@ -119,7 +119,6 @@ export default {
     width: 100%;
     padding-top: 20px;
   }
-
 }
 
 #input {
@@ -155,9 +154,6 @@ export default {
   font-size: 16px;
 }
 
-.inicio {
-}
-
 .final {
   border-left: 1px solid #f2f2f2;
 }
@@ -180,7 +176,6 @@ export default {
 
 .hijo_oculto {
   background: white;
-  padding-top: 4em;
   width: 100%;
   height: 0vh;
   padding-bottom: 10em;
@@ -190,7 +185,6 @@ export default {
   .hijo_oculto {
     padding-top: 1em;
   }
-
 }
 .openMenu {
   top: 0vh;
