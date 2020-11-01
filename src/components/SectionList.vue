@@ -8,7 +8,9 @@
             <b-img-lazy :src="dato.photo" />
         </template>
         <template #namelink>
-            HOST NAME
+            <a :href="dato.photo" target="_blank" >
+              Imagen Completa
+            </a>
         </template>
         <template #type>
           {{ dato.type }}

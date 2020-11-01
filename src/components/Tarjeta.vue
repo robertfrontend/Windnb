@@ -9,35 +9,33 @@
     </div>
     <b-row class="pt-3 px-4 justify-content-between">
       <div class="">
-        <a href="#">
           <slot name="namelink"> SUPER HOST </slot>
-        </a>
       </div>
       <div>
         <p class="ml-n4" style="color: #828282">
-          <slot name="type"></slot>
+          <slot name="type"> .... </slot>
         </p>
       </div>
       <div class="d-flex">
         <i class="fas fa-star text-danger mt-1 mr-1"></i>
         <p class="">
-          <slot name="rating"></slot>
+          <slot name="rating">....</slot>
         </p>
       </div>
       <div class="col-12 pt-0 mt-n1">
         <p class="m-0 ml-n2" style="font-weight: 500">
           Hotel name:
           <span class="text-primary">
-            <slot name="nameHotel"></slot>
+            <slot name="nameHotel">....</slot>
           </span>
           <br />
           City:
           <span class="text-danger">
-            <slot name="city"></slot>
+            <slot name="city">....</slot>
           </span>
           <br />
           Country:
-          <span class="text-success"> <slot name="country"></slot></span>
+          <span class="text-success"> <slot name="country">....</slot></span>
         </p>
       </div>
     </b-row>
