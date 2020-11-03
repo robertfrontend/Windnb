@@ -26,7 +26,6 @@
           </b-col>
 
           <div class="div_oculto" :class="divOculto">
-
             <div class="bg-light w-100 text-right pt-2 pr-2 pt-md-5 pr-md-5">
               <i
                 class="fas fa-times text-danger"
@@ -38,15 +37,81 @@
             <div class="hijo_oculto">
               <b-container>
                 <b-row>
-                  <b-col lg="4" class=" text-left">
+                  <b-col lg="4" class="text-left">
                     <Location />
                   </b-col>
+
                   <b-col lg="4" class="text-left">
-                    <Guest />
+                    <b-row>
+                      <b-col>
+                        <label>GUESTS</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="Add guests"
+                          id="input"
+                          disabled
+                        />
+                      </b-col>
+                      <b-col md="12" class="w-100">
+                        <b-row>
+                          <b-col cols="12" class="ml-3">
+                            <b>Adults</b>
+                            <p class="text-secondary">Ages 13 or above</p>
+                          </b-col>
+                          <b-col cols="12" class="ml-3">
+                            <div class="d-flex flex-row">
+                              <div>
+                                <a
+                                  class="btn btn-sm btn-outline-dark"
+                                  @click="restarAdultos"
+                                  >-</a
+                                >
+                              </div>
+                              <div class="mx-2 mt-1">
+                                <b> {{ edadAdultos }} </b>
+                              </div>
+                              <div>
+                                <a
+                                  class="btn btn-sm btn-outline-dark"
+                                  @click="sumarAdultos"
+                                  >+</a
+                                >
+                              </div>
+                            </div>
+                          </b-col>
+                          <b-col cols="12" class="ml-3 mt-4">
+                            <b>Children</b>
+                            <p class="text-secondary">Ages 2-12</p>
+                          </b-col>
+                          <b-col cols="12" class="ml-3">
+                            <div class="d-flex flex-row">
+                              <div>
+                                <a
+                                  class="btn btn-sm btn-outline-dark"
+                                  @click="restarChildren"
+                                  >-</a
+                                >
+                              </div>
+                              <div class="mx-2 mt-1">
+                                <b> {{ edadChildren }} </b>
+                              </div>
+                              <div>
+                                <a
+                                  class="btn btn-sm btn-outline-dark"
+                                  @click="sumarChildren"
+                                  >+</a
+                                >
+                              </div>
+                            </div>
+                          </b-col>
+                        </b-row>
+                      </b-col>
+                    </b-row>
                   </b-col>
 
                   <b-col lg="4" class="text-center mt-4 mb-4">
-                    <button class="boton_one">
+                    <button class="boton_one" @click="buscar">
                       <i class="fas fa-search"></i>
                       Search
                     </button>
@@ -62,27 +127,59 @@
 </template>
 <script>
 import Location from "./Location";
-import Guest from "./Guest";
+// import Guest from "./Guest";
 
 export default {
   name: "Header",
   components: {
     Location,
-    Guest,
+    // Guest,
   },
   data() {
     return {
       openLocation: "",
       divOculto: "div_oculto",
+
+
+      // Guest propiedades
+      edadAdultos: 0,
+      edadChildren: 0,
+
+      invitados:0,
     };
   },
   methods: {
+    buscar() {
+      this.invitados = this.edadAdultos + this.edadChildren
+      this.$emit('datosHeader', this.invitados)
+      // console.log(this.invitados);
+      this.divOculto = "div_oculto"
+    },
+
     // open menu
     abrirMenu() {
       this.divOculto = "openMenu";
     },
     ocultar() {
       this.divOculto = "";
+    },
+
+    // Guest Methods
+    sumarAdultos() {
+      this.edadAdultos++;
+    },
+    restarAdultos() {
+      if (this.edadAdultos > 0) {
+        this.edadAdultos--;
+      }
+    },
+    sumarChildren() {
+      this.edadChildren++;
+    },
+    restarChildren() {
+      if (this.edadChildren > 0) {
+        this.edadChildren--;
+      }
     },
   },
 };

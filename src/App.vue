@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <Header />
+    <Header @datosHeader="eventoHeader"/>
     <div class="container">
-      <SectionList />
+      <SectionList :datoGuest="datoGuest" />
     </div>
   </div>
 </template>
@@ -17,6 +17,20 @@ export default {
   components: {
     Header,
     SectionList
+  },
+  data() {
+    return {
+      guest: 0,
+
+      datoGuest: 0
+    }
+  },
+  methods: {
+    eventoHeader(datos) {
+      console.log('datos busqueda', datos);
+      this.guest = datos
+      this.datoGuest = this.guest
+    }
   }
 }
 </script>

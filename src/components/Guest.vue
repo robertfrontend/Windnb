@@ -1,7 +1,7 @@
 <template>
   <div class="guest ml-3">
     <b-row>
-      <b-col @click="mostrarGuest">
+      <b-col >
         <label>GUESTS</label>
         <input
           type="text"
@@ -12,7 +12,7 @@
 
         />
       </b-col>
-      <b-col md="12" class="w-100" v-if="mostrar" >
+      <b-col md="12" class="w-100">
         <b-row>
           <b-col cols="12" class="ml-3">
             <b>Adults</b>
@@ -62,15 +62,9 @@ export default {
     return {
       edadAdultos: 0,
       edadChildren: 0,
-
-      mostrar: false
     };
   },
   methods: {
-
-    mostrarGuest() {
-      this.mostrar = true
-    },
 
     sumarAdultos() {
       this.edadAdultos++;

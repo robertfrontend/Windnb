@@ -18,7 +18,7 @@
             :key="index"
             class="pt-2 ml-3"
           >
-            {{ tarea.id}}
+            {{ tarea.id }}
             <a :href="'#' + tarea.id" class="text-dark">
               <i class="fas fa-map-marker-alt mr-1"></i
               ><b>{{ tarea.city | mayuscula }} - {{ tarea.hotelName }}</b>
@@ -30,29 +30,30 @@
   </div>
 </template>
 <script>
-import Api from '@/Api.js'
-
+import Api from "@/Api.js";
 
 export default {
   name: "Location",
   props: {},
   created() {
     // componente api
-    Api.traerDatos()
-      .then(ok => {
-        ok.data.map(res => {
-          this.datosApi.push(res)
-        })
-      })
+    Api.traerDatos().then((ok) => {
+      ok.data.map((res) => {
+        this.datosApi.push(res);
+      });
+    });
   },
   data() {
     return {
       // v-model de la busqueda
       locationSearch: "",
       datosApi: [],
+
     };
   },
-  methods: {},
+  methods: {
+
+  },
   computed: {
     // buscar las ciudades
     filtroTareas() {

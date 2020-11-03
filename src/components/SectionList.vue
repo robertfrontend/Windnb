@@ -3,7 +3,7 @@
     <h2><b>Stays in Finland</b></h2>
     <b-row class="pt-4 pl-2">
 
-      <tarjeta v-for="(dato) in datosApi" :key="dato.id" :id="dato.id" >
+      <tarjeta v-for="(dato) in filtrar" :key="dato.id" :id="dato.id" >
         <template #img>
             <b-img-lazy :src="dato.photo" />
         </template>
@@ -39,6 +39,9 @@ import Tarjeta from '@/components/Tarjeta.vue'
 
 export default {
   name: "SectionList",
+  props: {
+    datoGuest: Number
+  },
   components: {
     Tarjeta
   },
@@ -47,7 +50,7 @@ export default {
     Api.traerDatos()
       .then(ok => {
         ok.data.map(res => {
-          console.log(res);
+          // console.log(res);
           this.datosApi.push(res)
         })
       })
@@ -56,8 +59,16 @@ export default {
   data() {
     return {
       datosApi: [],
+      default: ''
     };
   },
+  computed: {
+    filtrar() {
+      return this.datosApi.filter(fil => {
+        return fil.country.includes(this.default)
+      })
+    }
+  }
 };
 </script>
 <style >
