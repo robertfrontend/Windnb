@@ -1,57 +1,63 @@
 <template>
-  <b-col lg="4" md="6" sm="12" class="mb-4 tarjeta mt-2">
+  <div class="tarjeta">
     <div class="img_tarject">
-      <slot name="img">
-        <b-img-lazy
-          src="https://cdn.pixabay.com/photo/2016/05/01/21/20/earth-1365995_960_720.jpg"
-        />
-      </slot>
+      <b-img-lazy :src="datos.photo" />
     </div>
     <b-row class="pt-3 px-4 justify-content-between">
       <div class="">
-          <slot name="namelink"> SUPER HOST </slot>
+        <slot name="namelink"> SUPER HOST </slot>
       </div>
       <div>
         <p class="ml-n4" style="color: #828282">
-          <slot name="type"> .... </slot>
+          {{ datos.type }}
         </p>
       </div>
       <div class="d-flex">
         <i class="fas fa-star text-danger mt-1 mr-1"></i>
         <p class="">
-          <slot name="rating">....</slot>
+          {{ datos.rating }}
         </p>
       </div>
       <div class="col-12 pt-0 mt-n1">
         <p class="m-0 ml-n2" style="font-weight: 500">
           Hotel name:
           <span class="text-primary">
-            <slot name="nameHotel">....</slot>
+            {{ datos.hotelName }}
           </span>
           <br />
           City:
           <span class="text-danger">
-            <slot name="city">....</slot>
+            {{ datos.city }}
           </span>
           <br />
           Country:
-          <span class="text-success"> <slot name="country">....</slot></span>
+          <span class="text-success"> {{ datos.country }} </span>
         </p>
       </div>
+      <!-- /${datos.hotelName.replace(/\s/g, '')}/` + id -->
+
     </b-row>
-  </b-col>
+  </div>
 </template>
 <script>
 export default {
-  data() {
-    return {};
+  props: {
+    datos: Object,
+    id: Number,
   },
+
+  data() {
+    return {
+      datosOk: this.datos
+    };
+  },
+  methods: {},
 };
 </script>
 <style>
 .tarjeta img {
   width: 100%;
-  height: 40vh;
+  height: 25vh;
   border-radius: 24px;
   object-fit: cover;
 }

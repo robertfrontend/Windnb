@@ -1,38 +1,33 @@
 <template>
   <div id="app">
-    <Header @datosHeader="eventoHeader"/>
-    <div class="container">
-      <SectionList :datoGuest="datoGuest" />
-    </div>
+    <Header @datosHeader="eventoHeader" />
+    <router-view />
   </div>
 </template>
 
 <script>
-import Header from '@/components/Header.vue'
-import SectionList from '@/components/SectionList.vue'
-
+import Header from "@/components/Header.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     Header,
-    SectionList
   },
   data() {
     return {
       guest: 0,
 
-      datoGuest: 0
-    }
+      datoGuest: 0,
+    };
   },
   methods: {
     eventoHeader(datos) {
-      console.log('datos busqueda', datos);
-      this.guest = datos
-      this.datoGuest = this.guest
-    }
-  }
-}
+      console.log("datos busqueda", datos);
+      this.guest = datos;
+      this.datoGuest = this.guest;
+    },
+  },
+};
 </script>
 
 <style>
@@ -45,7 +40,7 @@ body {
   font-family: sans-serif;
 }
 
-.boton_one{
+.boton_one {
   background: #eb5757;
   border: none;
   color: white;
