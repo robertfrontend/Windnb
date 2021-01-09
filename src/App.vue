@@ -40,13 +40,14 @@ body {
   font-family: sans-serif;
 }
 
+.loading-rojo{
+  color: #eb5757;
+}
+
 .boton_one {
-  background: #eb5757;
+  background: #eb5757 !important;
   border: none;
-  color: white;
-  padding: 12px 30px;
-  font-size: 16px;
+  color: white !important;
   cursor: pointer;
-  border-radius: 16px;
 }
 </style>

@@ -4,7 +4,7 @@
       <b-container>
         <b-row class="pl-4 pr-4">
           <b-col>
-            <img src="@/assets/logo.svg" alt="" />
+           <router-link to="/"> <img src="@/assets/logo.svg" alt="" /></router-link>
           </b-col>
 
           <b-col lg="6" md="12" sm="12">
@@ -111,7 +111,7 @@
                   </b-col>
 
                   <b-col lg="4" class="text-center mt-4 mb-4">
-                    <button class="boton_one" @click="buscar">
+                    <button class="boton_one btn btn-sm px-2" @click="buscar">
                       <i class="fas fa-search"></i>
                       Search
                     </button>

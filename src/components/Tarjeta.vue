@@ -1,7 +1,7 @@
 <template>
   <div class="tarjeta">
     <div class="img_tarject">
-      <b-img-lazy :src="datos.photo" />
+        <slot name="imagen"></slot>
     </div>
     <b-row class="pt-3 px-4 justify-content-between">
       <div class="">
